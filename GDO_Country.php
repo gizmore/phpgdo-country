@@ -2,15 +2,16 @@
 namespace GDO\Country;
 
 use GDO\Core\GDO;
+use GDO\Core\GDT_Char;
+use GDO\Core\GDT_Int;
+use GDO\Core\GDT_String;
 use GDO\Core\GDT_Template;
-use GDO\DB\GDT_Char;
-use GDO\DB\GDT_Int;
-use GDO\DB\GDT_String;
 
 /**
  * Country table/entity.
+ * 
  * @author gizmore
- * @version 6.10
+ * @version 7.0.1
  * @since 3.00
  */
 final class GDO_Country extends GDO
@@ -18,7 +19,7 @@ final class GDO_Country extends GDO
     ###########
     ### GDO ###
     ###########
-	public function gdoColumns()
+	public function gdoColumns() : array
 	{
 		return array(
 			GDT_Char::make('c_iso')->label('id')->length(2)->ascii()->caseS()->primary(),

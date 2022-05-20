@@ -1,17 +1,22 @@
 <?php
 namespace GDO\Country;
-use GDO\DB\GDT_ObjectSelect;
+
+use GDO\Core\GDT_ObjectSelect;
 use GDO\Core\GDT_Template;
+use GDO\Core\GDT;
+
 /**
  * Country selection field.
+ * 
  * @author gizmore
- * @since 6.00
- * @version 6.05
+ * @version 7.0.1
+ * @since 6.2.1
  */
 final class GDT_Country extends GDT_ObjectSelect
 {
 	protected function __construct()
 	{
+		parent::__construct();
 		$this->table(GDO_Country::table());
 		$this->emptyLabel('not_specified');
 		$this->min = $this->max = 2;
