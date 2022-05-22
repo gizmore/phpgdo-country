@@ -32,19 +32,19 @@ final class GDO_Country extends GDO
 	##############
 	### Getter ###
 	##############
-	public function getID() { return $this->getISO(); }
-	public function getIDFile() { $iso = strtolower($this->getISO()); return $iso === 'ad' ? 'axx' : $iso; }
-	public function getISO() { return $this->getVar('c_iso'); }
-	public function getISO3() { return $this->getVar('c_iso3'); }
-	public function displayName() { return t('country_'.strtolower($this->getISO())); }
-	public function displayEnglishName() { return ten('country_'.strtolower($this->getISO())); }
+	public function getID() : string { return $this->getISO(); }
+	public function getIDFile() : string { $iso = strtolower($this->getISO()); return $iso === 'ad' ? 'axx' : $iso; }
+	public function getISO() : string { return $this->getVar('c_iso'); }
+	public function getISO3() : string { return $this->getVar('c_iso3'); }
+	public function displayName() : string { return t('country_'.strtolower($this->getISO())); }
+	public function displayEnglishName() : string { return ten('country_'.strtolower($this->getISO())); }
 	
 	/**
 	 * Get a country by ID or return a stub object with name "Unknown".
 	 * @param int $id
 	 * @return self
 	 */
-	public static function getByISOOrUnknown($iso=null)
+	public static function getByISOOrUnknown($iso=null) : self
 	{
 		if ( ($iso === null) || (!($country = self::getById($iso))) )
 		{
@@ -53,7 +53,7 @@ final class GDO_Country extends GDO
 		return $country;
 	}
 	
-	public static function unknownCountry()
+	public static function unknownCountry() : string
 	{
 		return self::blank(['c_iso'=>'zz']);
 	}
@@ -64,18 +64,18 @@ final class GDO_Country extends GDO
 	/**
 	 * @return self[]
 	 */
-	public function &allCached($order=null, $json=false)
+	public function &allCached($order=null, $json=false) : array
 	{
 	    $all = parent::allCached($order, $json);
 	    return $this->allSorted($all);
 	}
 	
-	public function &all($order=null, $json=false)
+	public function &all($order=null, $json=false) : array
 	{
 	    return $this->allSorted(parent::all($order, $json));
 	}
 	
-	private function &allSorted(array &$all)
+	private function &allSorted(array &$all) : array
 	{
 	    uasort($all, function(GDO_Country $a, GDO_Country $b){
 	        $ca = iconv('utf-8', 'ascii//TRANSLIT', $a->displayName());
@@ -88,17 +88,17 @@ final class GDO_Country extends GDO
 	##############
 	### Render ###
 	##############
-	public function renderFlag()
+	public function renderFlag() : string
 	{
 		return GDT_Template::php('Country', 'cell/country.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
 	}
 
-	public function renderCell()
+	public function renderCell() : string
 	{
 		return GDT_Template::php('Country', 'cell/country.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
 	}
 
-	public function renderChoice()
+	public function renderList() : string
 	{
 		return GDT_Template::php('Country', 'cell/country.php', ['field' => GDT_Country::make()->gdo($this)->initial($this->getID()), 'choice' => true]);
 	}
