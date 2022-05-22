@@ -7,7 +7,7 @@ use GDO\Core\GDO_Module;
  * Country related functionality.
  * 
  * @author gizmore
- * @version 7.0.1
+ * @version 7.0.0
  * @since 3.00
  */
 class Module_Country extends GDO_Module

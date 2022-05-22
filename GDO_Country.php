@@ -10,7 +10,7 @@ use GDO\Core\GDT_Template;
  * Country table/entity.
  * 
  * @author gizmore
- * @version 7.0.1
+ * @version 7.0.0
  * @since 3.00
  */
 final class GDO_Country extends GDO
@@ -34,7 +34,7 @@ final class GDO_Country extends GDO
 	public function getIDFile() : string { $iso = strtolower($this->getISO()); return $iso === 'ad' ? 'axx' : $iso; }
 	public function getISO() : string { return $this->gdoVar('c_iso'); }
 	public function getISO3() : string { return $this->gdoVar('c_iso3'); }
-	public function displayName() : string { return t('country_'.strtolower($this->getISO())); }
+	public function renderName() : string { return t('country_'.strtolower($this->getISO())); }
 	public function displayEnglishName() : string { return ten('country_'.strtolower($this->getISO())); }
 	
 	/**
@@ -76,8 +76,8 @@ final class GDO_Country extends GDO
 	private function &allSorted(array &$all) : array
 	{
 	    uasort($all, function(GDO_Country $a, GDO_Country $b){
-	        $ca = iconv('utf-8', 'ascii//TRANSLIT', $a->displayName());
-	        $cb = iconv('utf-8', 'ascii//TRANSLIT', $b->displayName());
+	        $ca = iconv('utf-8', 'ascii//TRANSLIT', $a->renderName());
+	        $cb = iconv('utf-8', 'ascii//TRANSLIT', $b->renderName());
 	        return strcasecmp($ca, $cb);
 	    });
         return $all;

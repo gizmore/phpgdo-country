@@ -9,11 +9,13 @@ use function PHPUnit\Framework\assertEquals;
 
 /**
  * This test also tests @{GDO->allCached()}.
+ * 
  * @author gizmore
+ * @version 7.0.0
  */
 final class CountryTest extends TestCase
 {
-    public function testCountries()
+    public function testCountriesAllCached()
     {
         $countries = GDO_Country::table()->allCached();
         assertTrue(count($countries) > 200);

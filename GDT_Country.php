@@ -9,7 +9,7 @@ use GDO\Core\GDT_Template;
  * - Optional name label? Oo
  * 
  * @author gizmore
- * @version 7.0.1
+ * @version 7.0.0
  * @since 6.2.1
  */
 final class GDT_Country extends GDT_ObjectSelect

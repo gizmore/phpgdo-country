@@ -10,7 +10,7 @@ if (!($country instanceof GDO_Country ))
 <?php
 if ($country instanceof GDO_Country) :
 $id = $country->getID();
-$name = $country->displayName();
+$name = $country->renderName();
 ?>
 <img
  class="gdo-country"

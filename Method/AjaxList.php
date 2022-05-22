@@ -19,7 +19,7 @@ final class AjaxList extends MethodAjax
         $json = array_map(function(GDO_Country $country) {
             return [
                 'id' => $country->getID(),
-                'text' => $country->displayName(),
+                'text' => $country->renderName(),
                 'display' => $country->renderChoice(),
             ];
         }, GDO_Country::table()->allCached());

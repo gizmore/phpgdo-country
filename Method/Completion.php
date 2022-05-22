@@ -24,7 +24,7 @@ final class Completion extends MethodCompletion
         $result = [];
         foreach ($countries as $country)
         {
-            $name = $country->displayName();
+            $name = $country->renderName();
             $iso = $country->getISO();
             if ($q === '')
             {
@@ -52,7 +52,7 @@ final class Completion extends MethodCompletion
         $json = array_map(function(GDO_Country $country) {
             return [
                 'id' => $country->getID(),
-                'text' => $country->displayName(),
+                'text' => $country->renderName(),
                 'display' => $country->renderChoice(),
             ];
         }, $result);
