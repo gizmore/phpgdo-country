@@ -3,7 +3,6 @@ namespace GDO\Country;
 
 use GDO\Core\GDT_ObjectSelect;
 use GDO\Core\GDT_Template;
-use GDO\Core\GDT;
 
 /**
  * Country selection field.

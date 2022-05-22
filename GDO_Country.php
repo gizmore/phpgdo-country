@@ -3,7 +3,6 @@ namespace GDO\Country;
 
 use GDO\Core\GDO;
 use GDO\Core\GDT_Char;
-use GDO\Core\GDT_Int;
 use GDO\Core\GDT_String;
 use GDO\Core\GDT_Template;
 
@@ -25,7 +24,6 @@ final class GDO_Country extends GDO
 			GDT_Char::make('c_iso')->label('id')->length(2)->ascii()->caseS()->primary(),
 			GDT_Char::make('c_iso3')->length(3)->ascii()->caseS()->notNull(),
 			GDT_String::make('c_phonecode')->min(2)->max(32),
-			GDT_Int::make('c_population')->initial('0')->unsigned(),
 		);
 	}
 
