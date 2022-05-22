@@ -32,8 +32,8 @@ final class GDO_Country extends GDO
 	##############
 	public function getID() : string { return $this->getISO(); }
 	public function getIDFile() : string { $iso = strtolower($this->getISO()); return $iso === 'ad' ? 'axx' : $iso; }
-	public function getISO() : string { return $this->getVar('c_iso'); }
-	public function getISO3() : string { return $this->getVar('c_iso3'); }
+	public function getISO() : string { return $this->gdoVar('c_iso'); }
+	public function getISO3() : string { return $this->gdoVar('c_iso3'); }
 	public function displayName() : string { return t('country_'.strtolower($this->getISO())); }
 	public function displayEnglishName() : string { return ten('country_'.strtolower($this->getISO())); }
 	
@@ -42,7 +42,7 @@ final class GDO_Country extends GDO
 	 * @param int $id
 	 * @return self
 	 */
-	public static function getByISOOrUnknown($iso=null) : self
+	public static function getByISOOrUnknown(string $iso=null) : self
 	{
 		if ( ($iso === null) || (!($country = self::getById($iso))) )
 		{

@@ -6,6 +6,7 @@ use GDO\Core\GDT_Template;
 
 /**
  * Country selection field.
+ * - Optional name label? Oo
  * 
  * @author gizmore
  * @version 7.0.1
@@ -13,6 +14,8 @@ use GDO\Core\GDT_Template;
  */
 final class GDT_Country extends GDT_ObjectSelect
 {
+	public function defaultLabel() : self { return $this->label('country'); }
+	
 	protected function __construct()
 	{
 		parent::__construct();
@@ -28,22 +31,26 @@ final class GDT_Country extends GDT_ObjectSelect
 		return $this->completionHref(href('Country', 'Completion'));
 	}
 	
-	public function defaultLabel() { return $this->label('country'); }
+	##############
+	### Render ###
+	##############
+	public function renderCell() : string
+	{
+		return GDT_Template::php('Country', 'cell/country.php', ['field'=>$this]);
+	}
 	
-	public function configJSON()
+	public function configJSON() : array
 	{
 	    return array_merge(parent::configJSON(), array(
 			'completionHref' => $this->completionHref,
 		));
 	}
 	
-	public function renderCell()
-	{
-		return GDT_Template::php('Country', 'cell/country.php', ['field'=>$this]);
-	}
-	
-	public $withName = true;
-	public function withName($withName=true)
+	##################
+	### Name Label ###
+	##################
+	public bool $withName = true;
+	public function withName(bool $withName=true) : self
 	{
 		$this->withName = $withName;
 		return $this;
