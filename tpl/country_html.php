@@ -1,10 +1,10 @@
 <?php
 use GDO\Country\GDO_Country;
 /** @var $field \GDO\Country\GDT_Country **/
-$country = $field->gdo;
+$country = isset($field->gdo) ? $field->gdo : null;
 if (!($country instanceof GDO_Country ))
 {
-    $country = GDO_Country::getById($field->var);
+    $country = GDO_Country::getById($field->getVar());
 }
 ?>
 <?php

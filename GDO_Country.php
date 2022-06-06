@@ -88,17 +88,17 @@ final class GDO_Country extends GDO
 	##############
 	public function renderFlag() : string
 	{
-		return GDT_Template::php('Country', 'cell/country.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
+		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
 	}
 
 	public function renderCell() : string
 	{
-		return GDT_Template::php('Country', 'cell/country.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
+		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
 	}
 
 	public function renderList() : string
 	{
-		return GDT_Template::php('Country', 'cell/country.php', ['field' => GDT_Country::make()->gdo($this)->initial($this->getID()), 'choice' => true]);
+		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this)->initial($this->getID()), 'choice' => true]);
 	}
 	
 }
