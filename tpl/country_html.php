@@ -1,4 +1,5 @@
 <?php
+namespace GDO\Country\tpl;
 use GDO\Country\GDO_Country;
 /** @var $field \GDO\Country\GDT_Country **/
 $country = isset($field->gdo) ? $field->gdo : null;

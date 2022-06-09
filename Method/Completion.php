@@ -9,12 +9,22 @@ use GDO\Core\GDT_Join;
  * Autocomplete adapter for countries.
  * 
  * @author gizmore
- * @version 6.10.1
+ * @version 7.0.0
  * @since 6.0.0
  */
 final class Completion extends MethodCompletion
 {
-    public function execute()
+	public function getMethodTitle() : string
+	{
+		return t('countries');
+	}
+	
+	public function getMethodDescription() : string
+	{
+		return $this->getMethodTitle();
+	}
+	
+	public function execute()
     {
         $countries = GDO_Country::table()->allCached();
         
