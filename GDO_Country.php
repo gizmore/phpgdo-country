@@ -51,7 +51,7 @@ final class GDO_Country extends GDO
 		return $country;
 	}
 	
-	public static function unknownCountry() : string
+	public static function unknownCountry() : self
 	{
 		return self::blank(['c_iso'=>'zz']);
 	}
