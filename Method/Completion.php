@@ -3,13 +3,13 @@ namespace GDO\Country\Method;
 
 use GDO\Core\MethodCompletion;
 use GDO\Country\GDO_Country;
-use GDO\Core\GDT_Join;
+use GDO\Core\GDT_JSON;
 
 /**
  * Autocomplete adapter for countries.
  * 
  * @author gizmore
- * @version 7.0.0
+ * @version 7.0.1
  * @since 6.0.0
  */
 final class Completion extends MethodCompletion
@@ -66,7 +66,7 @@ final class Completion extends MethodCompletion
             ];
         }, $result);
         
-        return GDT_Join::make()->value($json);
+        return GDT_JSON::make()->value($json);
     }
     
 }
