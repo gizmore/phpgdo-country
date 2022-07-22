@@ -68,7 +68,7 @@ final class GDO_Country extends GDO
 	    return $this->allSorted($all);
 	}
 	
-	public function &all($order=null, $json=false) : array
+	public function &all(string $order=null, bool $json=false) : array
 	{
 	    return $this->allSorted(parent::all($order, $json));
 	}
