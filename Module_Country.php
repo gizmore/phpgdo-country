@@ -7,8 +7,8 @@ use GDO\Core\GDO_Module;
  * Country related functionality.
  * 
  * @author gizmore
- * @version 7.0.0
- * @since 3.00
+ * @version 7.0.1
+ * @since 3.0.0
  */
 class Module_Country extends GDO_Module
 {
@@ -25,5 +25,11 @@ class Module_Country extends GDO_Module
 	##############
 	### Config ###
 	##############
+	public function getUserSettings() : array
+	{
+		return [
+			GDT_Country::make('country'),
+		];
+	}
 	
 }
