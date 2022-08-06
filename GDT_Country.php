@@ -9,7 +9,7 @@ use GDO\Core\GDT_Template;
  * - Optional name label? Oo
  * 
  * @author gizmore
- * @version 7.0.0
+ * @version 7.0.1
  * @since 6.2.1
  */
 final class GDT_Country extends GDT_ObjectSelect
@@ -34,16 +34,16 @@ final class GDT_Country extends GDT_ObjectSelect
 	##############
 	### Render ###
 	##############
-	public function renderCell() : string
+	public function renderHTML() : string
 	{
 		return GDT_Template::php('Country', 'country_html.php', ['field'=>$this]);
 	}
 	
 	public function configJSON() : array
 	{
-	    return array_merge(parent::configJSON(), array(
+	    return array_merge(parent::configJSON(), [
 			'completionHref' => $this->completionHref,
-		));
+		]);
 	}
 	
 	##################
