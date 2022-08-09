@@ -13,8 +13,8 @@ if ($country instanceof GDO_Country) :
 $id = $country->getID();
 $name = $country->renderName();
 ?>
+<span class="gdo-country">
 <img
- class="gdo-country"
  alt="<?=$id?>"
  title="<?=$name?>"
  src="<?=GDO_WEB_ROOT?>GDO/Country/img/<?=$id?>.png" />
@@ -23,11 +23,11 @@ $name = $country->renderName();
 <?php endif; ?>
 <?php else : ?>
 <img
- class="gdo-country"
  alt="??"
  title="<?=t('unknown_country')?>"
  src="<?=GDO_WEB_ROOT?>GDO/Country/img/ZZ.png" />
 <?php if ($field->withName) : ?>
 <span><?=t('unknown_country')?></span>
 <?php endif;?>
+</span>
 <?php endif;?>

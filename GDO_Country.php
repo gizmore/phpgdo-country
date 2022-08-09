@@ -5,13 +5,14 @@ use GDO\Core\GDO;
 use GDO\Core\GDT_Char;
 use GDO\Core\GDT_String;
 use GDO\Core\GDT_Template;
+use GDO\Util\Strings;
 
 /**
- * Country table/entity.
+ * Country table and entity.
  * 
  * @author gizmore
- * @version 7.0.0
- * @since 3.00
+ * @version 7.0.1
+ * @since 3.0.0
  */
 final class GDO_Country extends GDO
 {
@@ -20,11 +21,11 @@ final class GDO_Country extends GDO
     ###########
 	public function gdoColumns() : array
 	{
-		return array(
+		return [
 			GDT_Char::make('c_iso')->label('id')->length(2)->ascii()->caseS()->primary(),
 			GDT_Char::make('c_iso3')->length(3)->ascii()->caseS()->notNull(),
 			GDT_String::make('c_phonecode')->min(2)->max(32),
-		);
+		];
 	}
 
 	##############
@@ -39,8 +40,6 @@ final class GDO_Country extends GDO
 	
 	/**
 	 * Get a country by ID or return a stub object with name "Unknown".
-	 * @param int $id
-	 * @return self
 	 */
 	public static function getByISOOrUnknown(string $iso=null) : self
 	{
@@ -76,9 +75,7 @@ final class GDO_Country extends GDO
 	private function &allSorted(array &$all) : array
 	{
 	    uasort($all, function(GDO_Country $a, GDO_Country $b){
-	        $ca = iconv('utf-8', 'ascii//TRANSLIT', $a->renderName());
-	        $cb = iconv('utf-8', 'ascii//TRANSLIT', $b->renderName());
-	        return strcasecmp($ca, $cb);
+	    	return Strings::compare($a->renderName(), $b->renderName());
 	    });
         return $all;
 	}
@@ -86,12 +83,12 @@ final class GDO_Country extends GDO
 	##############
 	### Render ###
 	##############
-	public function renderFlag() : string
-	{
-		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
-	}
+// 	public function renderFlag() : string
+// 	{
+// 		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
+// 	}
 
-	public function renderCell() : string
+	public function renderHTML() : string
 	{
 		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
 	}

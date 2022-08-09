@@ -19,11 +19,6 @@ final class Completion extends MethodCompletion
 		return t('countries');
 	}
 	
-	public function getMethodDescription() : string
-	{
-		return $this->getMethodTitle();
-	}
-	
 	public function execute()
     {
         $countries = GDO_Country::table()->allCached();
@@ -66,7 +61,7 @@ final class Completion extends MethodCompletion
             ];
         }, $result);
         
-        return GDT_JSON::make()->value($json);
+        return GDT_JSON::with($json);
     }
     
 }
