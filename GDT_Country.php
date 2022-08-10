@@ -34,9 +34,9 @@ final class GDT_Country extends GDT_ObjectSelect
 	##############
 	### Render ###
 	##############
-	public function renderHTML() : string
+	public function renderCell() : string
 	{
-		return GDT_Template::php('Country', 'country_html.php', ['field'=>$this]);
+		return GDT_Template::php('Country', 'country_html.php', ['field' => $this]);
 	}
 	
 	public function configJSON() : array

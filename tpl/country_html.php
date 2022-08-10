@@ -8,26 +8,26 @@ if (!($country instanceof GDO_Country))
     $country = GDO_Country::getById($field->getVar());
 }
 ?>
+<div class="gdo-country">
 <?php
 if ($country instanceof GDO_Country) :
 $id = $country->getID();
 $name = $country->renderName();
 ?>
-<span class="gdo-country">
-<img
- alt="<?=$id?>"
- title="<?=$name?>"
- src="<?=GDO_WEB_ROOT?>GDO/Country/img/<?=$id?>.png" />
+ <img
+  alt="<?=$id?>"
+  title="<?=$name?>"
+  src="<?=GDO_WEB_ROOT?>GDO/Country/img/<?=$id?>.png" ></img>
 <?php if ($field->withName) : ?>
-<span><?=$name?></span>
+ <span><?=$name?></span>
 <?php endif; ?>
 <?php else : ?>
-<img
- alt="??"
- title="<?=t('unknown_country')?>"
- src="<?=GDO_WEB_ROOT?>GDO/Country/img/ZZ.png" />
+ <img
+  alt="??"
+  title="<?=t('unknown_country')?>"
+  src="<?=GDO_WEB_ROOT?>GDO/Country/img/ZZ.png" ></img>
 <?php if ($field->withName) : ?>
-<span><?=t('unknown_country')?></span>
-<?php endif;?>
-</span>
-<?php endif;?>
+ <span><?=t('unknown_country')?></span>
+<?php endif; ?>
+<?php endif; ?>
+</div>
