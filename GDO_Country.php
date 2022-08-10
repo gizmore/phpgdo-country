@@ -98,7 +98,7 @@ final class GDO_Country extends GDO
 		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
 	}
 
-	public function renderChoice() : string
+	public function renderOption() : string
 	{
 		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this)->initial($this->getID()), 'choice' => true]);
 	}

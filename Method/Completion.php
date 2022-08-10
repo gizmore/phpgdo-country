@@ -57,7 +57,7 @@ final class Completion extends MethodCompletion
             return [
                 'id' => $country->getID(),
                 'text' => $country->renderName(),
-                'display' => $country->renderChoice(),
+                'display' => $country->renderOption(),
             ];
         }, $result);
         

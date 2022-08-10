@@ -30,7 +30,7 @@ final class AjaxList extends MethodAjax
             return [
                 'id' => $country->getID(),
                 'text' => $country->renderName(),
-                'display' => $country->renderChoice(),
+                'display' => $country->renderOption(),
             ];
         }, GDO_Country::table()->allCached());
         
