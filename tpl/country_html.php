@@ -5,7 +5,10 @@ use GDO\Country\GDO_Country;
 $country = isset($field->gdo) ? $field->gdo : null;
 if (!($country instanceof GDO_Country))
 {
-    $country = GDO_Country::getById($field->getVar());
+	if ($id = $field->getVar())
+	{
+		$country = GDO_Country::getById($field->getVar());
+	}
 }
 ?>
 <div class="gdo-country">
