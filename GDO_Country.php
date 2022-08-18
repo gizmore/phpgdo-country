@@ -31,7 +31,7 @@ final class GDO_Country extends GDO
 	##############
 	### Getter ###
 	##############
-	public function getID() : ?string { return $this->getISO(); }
+	public function getID() : ?string { return $this->gdoVar('c_iso'); }
 	public function getIDFile() : string { $iso = strtolower($this->getISO()); return $iso === 'ad' ? 'axx' : $iso; }
 	public function getISO() : string { return $this->gdoVar('c_iso'); }
 	public function getISO3() : string { return $this->gdoVar('c_iso3'); }
