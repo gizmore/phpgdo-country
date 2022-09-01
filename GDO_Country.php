@@ -9,7 +9,11 @@ use GDO\Util\Strings;
 
 /**
  * Country table and entity.
+ * Renders UTF-8 flag in CLI mode.
+ * Features Phone-Code.
  * 
+ * @TODO: More country metrics like citizens, currencies, languages and more.
+ *  
  * @author gizmore
  * @version 7.0.1
  * @since 3.0.0
@@ -83,24 +87,30 @@ final class GDO_Country extends GDO
 	##############
 	### Render ###
 	##############
-// 	public function renderFlag() : string
-// 	{
-// 		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
-// 	}
-
-// 	public function renderCard() : string
-// 	{
-// 		return parent::renderCard();
-// 	}
+	/**
+	 * Render UTF-8 flag.
+	 */
+	public function renderCLI() : string
+	{
+		$iso = $this->getISO();
+		$flag = '&#'.(0x1f1a5+ord($iso[0])).';';
+		$flag .= '&#'.(0x1f1a5+ord($iso[1])).';';
+		return mb_convert_encoding($flag, 'UTF-8', 'HTML-ENTITIES');
+	}
 
 	public function renderHTML() : string
 	{
-		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => false]);
+		return $this->renderFlag();
 	}
 
 	public function renderOption() : string
 	{
-		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this)->initial($this->getID()), 'choice' => true]);
+		return $this->renderFlag(true);
+	}
+	
+	public function renderFlag(bool $option=false) : string
+	{
+		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => $option]);
 	}
 	
 }
