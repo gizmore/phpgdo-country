@@ -3,7 +3,7 @@ namespace GDO\Country\Method;
 
 use GDO\Core\MethodCompletion;
 use GDO\Country\GDO_Country;
-use GDO\Core\GDT_JSON;
+use GDO\Core\GDT_Array;
 
 /**
  * Autocomplete adapter for countries.
@@ -61,7 +61,7 @@ final class Completion extends MethodCompletion
             ];
         }, $result);
         
-        return GDT_JSON::with($json);
+        return GDT_Array::make()->value($json);
     }
     
 }
