@@ -23,7 +23,7 @@ final class GDT_Country extends GDT_ObjectSelect
 		$this->emptyLabel('not_specified');
 		$this->min = $this->max = 2;
 		$this->icon('flag');
-		$this->withCompletion();
+// 		$this->withCompletion();
 	}
 	
 	public function withCompletion()
@@ -39,12 +39,12 @@ final class GDT_Country extends GDT_ObjectSelect
 		return GDT_Template::php('Country', 'country_html.php', ['field' => $this]);
 	}
 	
-	public function configJSON() : array
-	{
-	    return array_merge(parent::configJSON(), [
-			'completionHref' => $this->completionHref,
-		]);
-	}
+// 	public function configJSON() : array
+// 	{
+// 	    return array_merge(parent::configJSON(), [
+// 			'completionHref' => $this->completionHref,
+// 		]);
+// 	}
 	
 	##################
 	### Name Label ###
