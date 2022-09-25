@@ -19,7 +19,7 @@ final class Completion extends MethodCompletion
 		return t('countries');
 	}
 	
-	protected function gdoTable(): GDO
+	protected function gdoTable() : GDO
 	{
 		return GDO_Country::table();
 	}
