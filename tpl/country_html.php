@@ -11,7 +11,7 @@ if (!($country instanceof GDO_Country))
 	}
 }
 ?>
-<div class="gdo-country">
+<span class="gdo-country">
 <?php
 if ($country instanceof GDO_Country) :
 $id = $country->getID();
@@ -33,4 +33,4 @@ $name = $country->renderName();
  <span><?=t('unknown_country')?></span>
 <?php endif; ?>
 <?php endif; ?>
-</div>
+</span>
