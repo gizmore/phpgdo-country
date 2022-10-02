@@ -110,7 +110,7 @@ final class GDO_Country extends GDO
 	
 	public function renderFlag(bool $option=false) : string
 	{
-		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'choice' => $option]);
+		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'option' => $option]);
 	}
 	
 }
