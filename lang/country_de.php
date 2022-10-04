@@ -5,6 +5,8 @@ return [
 	'unknown_country' => 'Unbekanntes Land',
 	'country' => 'Land',
 	'countries' => 'Länder',
+	'country_of_living' => 'Lebt in',
+	'country_of_origin' => 'Stammt aus',
 	
 	'country_af' => 'Afghanistan',
 	'country_ax' => 'Åland',

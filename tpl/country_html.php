@@ -10,17 +10,17 @@ if (!($country instanceof GDO_Country))
 		$country = GDO_Country::getById($field->getVar());
 	}
 }
+?>
+<span class="gdo-country">
+<?php
+if ($country instanceof GDO_Country) :
+$id = $country->getID();
 $name = $country->renderName();
 if ($option)
 {
 	echo $country->renderCLI() . '&nbsp;' . $name;
 	return;
 }
-?>
-<span class="gdo-country">
-<?php
-if ($country instanceof GDO_Country) :
-$id = $country->getID();
 ?>
  <img
   alt="<?=$id?>"
@@ -30,6 +30,13 @@ $id = $country->getID();
  <span><?=$name?></span>
 <?php endif; ?>
 <?php else : ?>
+<?php
+	if ($option)
+	{
+		echo $country->renderCLI() . '&nbsp;' . t('unknown_country');
+		return;
+	}
+?>
  <img
   alt="??"
   title="<?=t('unknown_country')?>"
