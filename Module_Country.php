@@ -28,8 +28,8 @@ class Module_Country extends GDO_Module
 	public function getUserSettings() : array
 	{
 		return [
-			GDT_Country::make('country_of_living'),
-			GDT_Country::make('country_of_origin'),
+			GDT_Country::make('country_of_living')->label('country_of_living'),
+			GDT_Country::make('country_of_origin')->label('country_of_origin'),
 		];
 	}
 	
