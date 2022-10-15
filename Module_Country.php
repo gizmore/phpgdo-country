@@ -2,6 +2,7 @@
 namespace GDO\Country;
 
 use GDO\Core\GDO_Module;
+use GDO\UI\GDT_Divider;
 
 /**
  * Country related functionality.
@@ -30,6 +31,15 @@ class Module_Country extends GDO_Module
 		return [
 			GDT_Country::make('country_of_living')->label('country_of_living'),
 			GDT_Country::make('country_of_origin')->label('country_of_origin'),
+		];
+	}
+	
+	public function getPrivacyRelatedFields(): array
+	{
+		return [
+			GDT_Divider::make('privacy_info_country_module'),
+			$this->setting('country_of_living'),
+			$this->setting('country_of_origin'),
 		];
 	}
 	

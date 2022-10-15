@@ -7,6 +7,7 @@ return [
 	'countries' => 'Countries',
 	'country_of_living' => 'Living in',
 	'country_of_origin' => 'Origin Country',
+	'privacy_info_country_module' => 'The country module only stores your settings. Other Modules might detect your country.',
 	
 	'country_af' => 'Afghanistan',
 	'country_ax' => 'Aland Islands',
