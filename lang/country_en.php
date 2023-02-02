@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Country\lang;
 return [
+	'module_country' => 'Country',
 	'gdo_country' => 'Country',
 	'unknown_country' => 'Unknown Country',
 	'country' => 'Country',
