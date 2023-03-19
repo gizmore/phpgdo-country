@@ -45,7 +45,7 @@ final class GDO_Country extends GDO
 	/**
 	 * Get a country by ID or return a stub object with name "Unknown".
 	 */
-	public static function getByISOOrUnknown(string $iso=null) : self
+	public static function getByISOOrUnknown(string $iso=null): static
 	{
 		if ( ($iso === null) || (!($country = self::getById($iso))) )
 		{
@@ -54,7 +54,7 @@ final class GDO_Country extends GDO
 		return $country;
 	}
 	
-	public static function unknownCountry() : self
+	public static function unknownCountry(): static
 	{
 		return self::blank(['c_iso'=>'ZZ']);
 	}

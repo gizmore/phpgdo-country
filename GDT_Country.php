@@ -14,7 +14,7 @@ use GDO\Core\GDT_Template;
  */
 final class GDT_Country extends GDT_ObjectSelect
 {
-	public function defaultLabel() : self { return $this->label('country'); }
+	public function defaultLabel(): static { return $this->label('country'); }
 	
 	protected function __construct()
 	{
@@ -50,7 +50,7 @@ final class GDT_Country extends GDT_ObjectSelect
 	### Name Label ###
 	##################
 	public bool $withName = true;
-	public function withName(bool $withName=true) : self
+	public function withName(bool $withName=true): static
 	{
 		$this->withName = $withName;
 		return $this;
