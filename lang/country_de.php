@@ -1,5 +1,6 @@
 <?php
 namespace GDO\Country\lang;
+
 return [
 	'module_country' => 'Länder',
 	'gdo_country' => 'Land',
@@ -9,7 +10,7 @@ return [
 	'country_of_living' => 'Lebt in',
 	'country_of_origin' => 'Stammt aus',
 	'privacy_info_country_module' => 'Dieses Modul speichert nur Ihre Einstellungen. Allerdings könnten andere Module Ihr Land ermitteln.',
-	
+
 	'country_af' => 'Afghanistan',
 	'country_ax' => 'Åland',
 	'country_al' => 'Albanien',
