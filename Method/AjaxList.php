@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Country\Method;
 
+use GDO\Core\GDT;
 use GDO\Core\GDT_JSON;
 use GDO\Core\MethodAjax;
 use GDO\Country\GDO_Country;
@@ -25,7 +26,7 @@ final class AjaxList extends MethodAjax
 		return $this->getMethodTitle();
 	}
 
-	public function execute()
+	public function execute(): GDT
 	{
 		$json = array_map(function (GDO_Country $country)
 		{

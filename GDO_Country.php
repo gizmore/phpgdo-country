@@ -5,6 +5,7 @@ use GDO\Core\GDO;
 use GDO\Core\GDT_Char;
 use GDO\Core\GDT_String;
 use GDO\Core\GDT_Template;
+use GDO\Core\GDT_UInt;
 use GDO\Util\Strings;
 
 /**
@@ -51,6 +52,7 @@ final class GDO_Country extends GDO
 			GDT_Char::make('c_iso')->label('id')->length(2)->ascii()->caseS()->primary(),
 			GDT_Char::make('c_iso3')->length(3)->ascii()->caseS()->notNull(),
 			GDT_String::make('c_phonecode')->min(2)->max(32),
+			GDT_UInt::make('c_population')->bytes(8)->notNull()->initial('0'),
 		];
 	}
 

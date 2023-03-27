@@ -21,6 +21,9 @@ final class InstallCountries
 			$cca2 = array_search('cca2', $headers);
 			$cca3 = array_search('cca3', $headers);
 			$phone = array_search('callingCode', $headers);
+
+			$data = [];
+
 			# Loop
 			while ($row = fgetcsv($fh, null, ';'))
 			{
@@ -28,17 +31,20 @@ final class InstallCountries
 				{
 					if (!GDO_Country::getById($row[$cca2]))
 					{
-						GDO_Country::blank([
+						$data[] = [
 							'c_iso' => $row[$cca2],
 							'c_iso3' => $row[$cca3],
 							'c_phonecode' => $row[$phone],
-							'c_population' => null,
-						])->insert();
+							'c_population' => '0',
+						];
 					}
 				}
 			}
 
 			fclose($fh);
+
+			$fields = GDO_Country::table()->gdoColumnsOnly('c_iso', 'c_iso3', 'c_phonecode', 'c_population');
+			GDO_Country::bulkInsert($fields, $data);
 		}
 	}
 
