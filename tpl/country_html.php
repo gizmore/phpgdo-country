@@ -5,7 +5,7 @@ use GDO\Country\GDO_Country;
 use GDO\Country\GDT_Country;
 
 /** @var $field GDT_Country * */
-$country = isset($field->gdo) ? $field->gdo : null;
+$country = $field->gdo ?? null;
 if (!($country instanceof GDO_Country))
 {
 	if ($id = $field->getVar())
