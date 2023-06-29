@@ -27,7 +27,10 @@ final class GDT_Country extends GDT_ObjectSelect
 // 		$this->withCompletion();
 	}
 
-	public function defaultLabel(): self { return $this->label('country'); }
+	public function gdtDefaultLabel(): ?string
+    {
+        return 'country';
+    }
 
 	##############
 	### Render ###
