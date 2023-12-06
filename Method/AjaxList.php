@@ -37,7 +37,7 @@ final class AjaxList extends MethodAjax
 			];
 		}, GDO_Country::table()->allCached());
 
-		return GDT_JSON::make()->value($json);
+		return GDT_JSON::make()->value((array)$json);
 	}
 
 }
