@@ -262,6 +262,7 @@ return [
 	'country_zm' => 'Sambia',
 	'country_zw' => 'Simbabwe',
 	'country_xk' => 'Kosovo',
+    'country_xx' => 'Edward Snowden Land',
 	'country_zz' => 'Unbekanntes Land',
 	'no_country' => 'keine Auswahl',
 ];

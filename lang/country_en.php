@@ -266,6 +266,7 @@ return [
 	'country_zm' => 'Zambia',
 	'country_zw' => 'Zimbabwe',
 	'country_xk' => 'Kosovo',
-	'country_zz' => 'Unknown country',
+    'country_xx' => 'Edward Snowden Land',
+    'country_zz' => 'Unknown country',
 	'no_country' => 'No selection',
 ];

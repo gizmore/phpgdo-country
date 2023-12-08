@@ -12,7 +12,7 @@ use GDO\Core\GDT_Template;
  * @since 6.2.1
  * @author gizmore
  */
-final class GDT_Country extends GDT_ObjectSelect
+class GDT_Country extends GDT_ObjectSelect
 {
 
 	public bool $withName = true;
