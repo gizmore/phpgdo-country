@@ -6,6 +6,7 @@ use GDO\Core\GDT_Char;
 use GDO\Core\GDT_String;
 use GDO\Core\GDT_Template;
 use GDO\Core\GDT_UInt;
+use GDO\User\GDO_User;
 use GDO\Util\Strings;
 
 /**
@@ -130,5 +131,11 @@ final class GDO_Country extends GDO
 	{
 		return GDT_Template::php('Country', 'country_html.php', ['field' => GDT_Country::make()->gdo($this), 'option' => $option]);
 	}
+
+    public function displayNameForUser(GDO_User $user): string
+    {
+        $id = strtolower($this->getISO());
+        return tusr($user, "country_{$id}");
+    }
 
 }
