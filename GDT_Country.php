@@ -54,7 +54,7 @@ class GDT_Country extends GDT_ObjectSelect
 
 	public function withCompletion()
 	{
-		return $this->completionHref(href('Country', 'Completion'));
+		return $this->completionHref(href('Country', 'Completion', '&_fmt=json'));
 	}
 
 	public function withName(bool $withName = true): self
