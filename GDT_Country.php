@@ -22,7 +22,8 @@ class GDT_Country extends GDT_ObjectSelect
 		parent::__construct();
 		$this->table(GDO_Country::table());
 		$this->emptyLabel('not_specified');
-//		$this->min = $this->max = 2;
+		$this->min = 2;
+        $this->max = 2;
 		$this->icon('flag');
  		$this->withCompletion();
 	}
