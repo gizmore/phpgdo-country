@@ -41,11 +41,14 @@ final class Completion extends MethodCompletionArray
     protected function getItems(): array
     {
         $countries = GDO_Country::table()->allCached();
-        foreach ($countries as $country)
+        $items = [];
+        foreach ($countries as $key => $country)
         {
             /** @var GDO_Country $country */
             $country->setVar('english_name', $country->displayEnglishName());
             $country->setVar('language_name', $country->displayNameForUser(GDO_User::current()));
+            $items[$key] = $country;
         }
+        return $items;
     }
 }
