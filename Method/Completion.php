@@ -23,7 +23,6 @@ final class Completion extends MethodCompletionArray
 		return t('countries');
 	}
 
-
     protected function gdoTable(): GDO
     {
         return GDO_Country::table();

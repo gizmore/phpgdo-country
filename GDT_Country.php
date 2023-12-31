@@ -3,6 +3,9 @@ namespace GDO\Country;
 
 use GDO\Core\GDT_ObjectSelect;
 use GDO\Core\GDT_Template;
+use GDO\Table\GDT_Filter;
+use GDO\User\GDO_User;
+use GDO\Util\Strings;
 
 /**
  * Country selection field.
@@ -63,5 +66,21 @@ class GDT_Country extends GDT_ObjectSelect
 		$this->withName = $withName;
 		return $this;
 	}
+
+    public function renderFilter(GDT_Filter $f): string
+    {
+        return GDT_Template::php('Core', 'select_filter.php', ['f' => $f, 'field' => $this]);
+    }
+
+    protected function getChoices(): array
+    {
+        $choices = parent::getChoices();
+        $u = GDO_User::current();
+        uasort($choices, function(GDO_Country $c1, GDO_Country $c2) use ($u){
+            return Strings::compare($c1->displayNameForUser($u), $c2->displayNameForUser($u));
+        });
+        return $choices;
+    }
+
 
 }
