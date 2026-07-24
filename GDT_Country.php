@@ -45,13 +45,6 @@ class GDT_Country extends GDT_ObjectSelect
 		return GDT_Template::php('Country', 'country_html.php', ['field' => $this, 'option' => false]);
 	}
 
-// 	public function configJSON() : array
-// 	{
-// 	    return array_merge(parent::configJSON(), [
-// 			'completionHref' => $this->completionHref,
-// 		]);
-// 	}
-
 	##################
 	### Name Label ###
 	##################
