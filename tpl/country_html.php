@@ -3,6 +3,7 @@ namespace GDO\Country\tpl;
 
 use GDO\Country\GDO_Country;
 use GDO\Country\GDT_Country;
+use GDO\Country\CountrySprite;
 
 /** @var $field GDT_Country * */
 $country = $field->gdo ?? null;
@@ -25,10 +26,11 @@ if ($country instanceof GDO_Country) :
 		return;
 	}
 	?>
-    <img
-            alt="<?=$id?>"
-            title="<?=$name?>"
-            src="<?=GDO_WEB_ROOT?>GDO/Country/img/<?=$id?>.png"></img>
+    <span class="country-flag"
+          role="img"
+          aria-label="<?=$id?>"
+          title="<?=$name?>"
+          style="background-image:url('<?=GDO_WEB_ROOT?>GDO/Country/img/country-sprite.png'); background-position: <?=CountrySprite::backgroundPosition($id)?>"></span>
 <?php
 	if ($field->withName) : ?>
         <span><?=$name?></span>
@@ -43,10 +45,11 @@ else : ?>
 		return;
 	}
 	?>
-    <img
-            alt="??"
-            title="<?=t('unknown_country')?>"
-            src="<?=GDO_WEB_ROOT?>GDO/Country/img/ZZ.png"></img>
+    <span class="country-flag"
+          role="img"
+          aria-label="??"
+          title="<?=t('unknown_country')?>"
+          style="background-image:url('<?=GDO_WEB_ROOT?>GDO/Country/img/country-sprite.png'); background-position: <?=CountrySprite::backgroundPosition('ZZ')?>"></span>
 <?php
 	if ($field->withName) : ?>
         <span><?=t('unknown_country')?></span>

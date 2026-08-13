@@ -23,7 +23,16 @@ class Module_Country extends GDO_Module
 
 	public function getClasses(): array { return [GDO_Country::class]; }
 
-	public function onInstall(): void { InstallCountries::install(); }
+	public function onInstall(): void
+	{
+		InstallCountries::install();
+		CountrySprite::build();
+	}
+
+	public function onIncludeScripts(): void
+	{
+		$this->addCSS('css/gdo-country.css');
+	}
 
 	public function onLoadLanguage(): void { $this->loadLanguage('lang/country'); }
 
