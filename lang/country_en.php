@@ -9,6 +9,7 @@ return [
 	'countries' => 'Countries',
 	'country_of_living' => 'Living in',
 	'country_of_origin' => 'Origin Country',
+	'city_of_origin' => 'City of origin',
 	'privacy_info_country_module' => 'The country module only stores your settings. Other Modules might detect your country.',
 
 	'country_af' => 'Afghanistan',

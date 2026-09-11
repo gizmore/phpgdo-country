@@ -9,6 +9,7 @@ return [
 	'countries' => 'Länder',
 	'country_of_living' => 'Lebt in',
 	'country_of_origin' => 'Stammt aus',
+	'city_of_origin' => 'Herkunftsstadt',
 	'privacy_info_country_module' => 'Dieses Modul speichert nur Ihre Einstellungen. Allerdings könnten andere Module Ihr Land ermitteln.',
 
 	'country_af' => 'Afghanistan',
