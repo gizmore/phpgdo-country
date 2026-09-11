@@ -248,7 +248,7 @@ return [
 	'country_ae' => 'Vereinigte Arabische Emirate',
 	'country_gb' => 'Vereinigtes Königreich Großbritannien und Nordirland',
 	'country_us' => 'Vereinigte Staaten von Amerika',
-	'country_um' => 'United States Minor Outlying Islands',
+	'country_um' => 'Kleinere amerikanische Überseeinseln',
 	'country_uy' => 'Uruguay',
 	'country_uz' => 'Usbekistan',
 	'country_vu' => 'Vanuatu',
@@ -262,7 +262,7 @@ return [
 	'country_zm' => 'Sambia',
 	'country_zw' => 'Simbabwe',
 	'country_xk' => 'Kosovo',
-    'country_xx' => 'Edward Snowden Land',
+	'country_xx' => 'Edward-Snowden-Land',
 	'country_zz' => 'Unbekanntes Land',
 	'no_country' => 'keine Auswahl',
 ];
