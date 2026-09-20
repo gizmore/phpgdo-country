@@ -45,7 +45,7 @@ class Module_Country extends GDO_Module
 		return [
 			GDT_Country::make('country_of_living')->label('country_of_living'),
 			GDT_Country::make('country_of_origin')->label('country_of_origin'),
-            GDT_String::make('city_of_origin')->label('city_of_origin'),
+            GDT_String::make('city_of_origin')->label('city_of_origin')->icon('city'),
 		];
 	}
 
